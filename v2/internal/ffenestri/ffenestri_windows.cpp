@@ -598,7 +598,8 @@ void Run(struct Application* app, int argc, char **argv) {
         enableTranslucentBackground(app);
 
         // Setup transparency of main window. This allows the blur to show through.
-        SetLayeredWindowAttributes(app->window,RGB(255,255,255),0,LWA_COLORKEY);
+        // SetLayeredWindowAttributes(app->window,RGB(255,255,255),0,LWA_COLORKEY);
+        SetLayeredWindowAttributes(app->window,RGB(255,255,255),0,LWA_ALPHA);
     }
 
     // Store application pointer in window handle
