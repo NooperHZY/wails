@@ -18,6 +18,7 @@ int debug = 0;
 DWORD mainThread;
 
 #define WS_EX_NOREDIRECTIONBITMAP 0x00200000L
+#define WS_EX_LAYERED             0x00080000L
 
 // --- Assets
 extern const unsigned char runtime;
@@ -539,7 +540,8 @@ void Run(struct Application* app, int argc, char **argv) {
     // Configure translucency
     DWORD dwExStyle = 0;
     if ( app->WindowIsTranslucent) {
-        dwExStyle = WS_EX_NOREDIRECTIONBITMAP;
+        // dwExStyle = WS_EX_NOREDIRECTIONBITMAP;
+        dwExStyle = WS_EX_LAYERED;
         wc.hbrBackground = CreateSolidBrush(RGB(255,255,255));
     }
 
