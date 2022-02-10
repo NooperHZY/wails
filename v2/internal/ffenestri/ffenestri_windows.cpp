@@ -542,7 +542,7 @@ void Run(struct Application* app, int argc, char **argv) {
     if ( app->WindowIsTranslucent) {
         // dwExStyle = WS_EX_NOREDIRECTIONBITMAP;
         dwExStyle = WS_EX_LAYERED;
-        wc.hbrBackground = CreateSolidBrush(RGB(255,255,255));
+        wc.hbrBackground = CreateSolidBrush(RGB(255,0,0));
     }
 
     RegisterClassEx(&wc);
@@ -595,11 +595,11 @@ void Run(struct Application* app, int argc, char **argv) {
     if ( app->WindowIsTranslucent ) {
 
         // Enable the translucent background effect
-        enableTranslucentBackground(app);
+        // enableTranslucentBackground(app);
 
         // Setup transparency of main window. This allows the blur to show through.
         // SetLayeredWindowAttributes(app->window,RGB(255,255,255),0,LWA_COLORKEY);
-        SetLayeredWindowAttributes(app->window,RGB(255,255,255),0,LWA_ALPHA);
+        SetLayeredWindowAttributes(app->window,RGB(255,0,0),129,LWA_ALPHA|LWA_COLORKEY);
     }
 
     // Store application pointer in window handle

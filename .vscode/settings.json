@@ -2,7 +2,9 @@
   "go.formatTool": "goimports",
   "eslint.alwaysShowStatus": true,
   "files.associations": {
+    "*.tis": "tiscript",
     "__locale": "c",
-    "ios": "c"
+    "ios": "c",
+    "xlocbuf": "cpp"
   }
 }
